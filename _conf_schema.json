@@ -1,0 +1,23 @@
+{
+    "api_url": {
+        "description": "API的请求地址",
+        "type": "string",
+        "hint": "指定视频生成服务的API接口地址",
+        "default": "https://apis.kuai.host/v1/chat/completions",
+        "obvious_hint": false
+    },
+    "api_key": {
+        "description": "API密钥",
+        "type": "string",
+        "hint": "请填写你的API服务商提供的密钥，代码会自动添加'Bearer '前缀",
+        "default": "",
+        "obvious_hint": false
+    },
+    "model": {
+        "description": "视频生成模型名称",
+        "type": "string",
+        "hint": "指定要使用的视频生成模型",
+        "default": "sora-2-hd",
+        "obvious_hint": false
+    }
+}
