@@ -1,30 +1,18 @@
-from astrbot.api.message_components import *
-from astrbot.api import logger
-import astrbot.core.message.components as Comp
-from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
-from astrbot.api.star import Context, Star, StarTools, register
-from astrbot.core.message.components import Image, Video
-from astrbot.core import AstrBotConfig
-from astrbot.api.event import MessageChain
-from astrbot.api.all import *
-import importlib
-import subprocess
-from PIL import Image as PILImage
-import sys
+import base64
 import io
 import random
 import re
-from datetime import datetime
-from pathlib import Path # 确保 Path 已导入
-import time
-import aiohttp
 import asyncio
-from typing import Dict, Optional, List
-from astrbot.core.utils.io import download_image_by_url
-import base64
-import uuid
-import json
-import os
+from pathlib import Path
+from typing import List
+
+import aiohttp
+from PIL import Image as PILImage
+import astrbot.core.message.components as Comp
+from astrbot.api import logger
+from astrbot.api.event import MessageChain, AstrMessageEvent, filter
+from astrbot.api.star import Context, Star, register
+from astrbot.core.message.components import At, Image, Reply, Video
 
 @register("astrbot_plugin_sora", "CCYellowStar2", "使用API生成视频。指令: 文生视频 <提示词> 或 图生视频 <提示词> + 图片", "1.0")
 class ApiVideoPlugin(Star):
